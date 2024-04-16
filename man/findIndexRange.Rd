@@ -3,33 +3,23 @@
 \name{findIndexRange}
 \alias{findIndexRange}
 \title{From model output, find the time range that matches to the observed
-data set. Can either do this assuming a "peak" month and particular
-age group or after a burn-in period, retrieve the required time length of
-output matching the months in the forcing function. This second method allows
-the phi or phase parameter to be fitted.}
+data set. Do this by assuming a "peak" month, default is 7 (July)}
 \usage{
-findIndexRange(counts, peakMethod = 1, month = 7, ageGroup = 5, obs)
+findIndexRange(counts, month = 7, obs)
 }
 \arguments{
-\item{counts}{list of compartment counts from model 1, assuming
-monthly time steps}
-
-\item{peakMethod}{1 for lining up to peak month, 0 otherwise}
+\item{counts}{list of modelled detected infections in aggregated age groups,
+in same form as observational data}
 
 \item{month}{month 1 - 12, Default is 7 (July)}
-
-\item{ageGroup}{default age group is 5 which relates to 5-month olds}
 
 \item{obs}{table of monthly hospitalisation data for 4 age groups, at this
 stage assuming complete calendar years}
 }
 \value{
-list(index_start, index_end)
+list(index_start, index_end, phase)
 }
 \description{
 From model output, find the time range that matches to the observed
-data set. Can either do this assuming a "peak" month and particular
-age group or after a burn-in period, retrieve the required time length of
-output matching the months in the forcing function. This second method allows
-the phi or phase parameter to be fitted.
+data set. Do this by assuming a "peak" month, default is 7 (July)
 }

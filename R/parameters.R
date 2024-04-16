@@ -26,4 +26,4 @@ A_fit <- 0.51442670 #max. risk of hospitalisation (at age 0)
 B_fit <- 0.37756892 #decay constant
 C_fit <- 0.015 #min. risk across all ages
 D_fit <- 0.2 #scaling factor for previous hospitalisations
-E_fit <- 2.644003 #scaling of risk for pre-terms
+E_fit <- 2.63292393 #scaling of risk for pre-terms

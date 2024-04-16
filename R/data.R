@@ -14,3 +14,17 @@
 #' }
 #' @source \url{https://abs.gov.au/census/find-census-data/quickstats/2021/5GPER}
 "data.greaterPerth.2011"
+
+#' Monthly contact matrix
+#'
+#' Monthly number of contacts between five-year age groups within the population.
+#' This contact matrix was generated using the R package conmat based on the
+#' POLYMOD study results for the UK, normalised to 2011 metropolitan Perth
+#' population demographics. The matrix was made symmetric by averaging the
+#' non-diagonal values of the matrix. The <5 year age group is divided into
+#' monthly age groups in the model, with contacts being uniformly distributed
+#' into these resulting age groups.
+#'
+#' @format A 75 x 75 data matrix
+#' @source \url{https://rdrr.io/github/njtierney/conmat/}
+"data.contact.monthly"

@@ -25,11 +25,12 @@ age_structure <- function(year)
   age_out <- c(age_rate[-nAges], birth_pop/pop_groups[nAges])
 
   data.pop.model <- pop_data[-1, ]
-  data.pop.model <- data.pop.model %>% tibble::add_row(lga = "Greater Perth",
-                             lower.age.limit = age_vect_years[which(age_vect_years < 5)],
-                             year = year,
-                             population = pop_groups[1:numMonthly],
-                             .before = 1)
+
+  data.pop.model <- tibble::add_row(.data = data.pop.model, lga = "Greater Perth",
+                                    lower.age.limit = age_vect_years[which(age_vect_years < 5)],
+                                    year = year,
+                                    population = pop_groups[1:numMonthly],
+                                    .before = 1)
   data.pop.model <- data.pop.model[which(data.pop.model$lower.age.limit < final_age),]
   save(data.pop.model, file = "data.pop.model.rda" )
 
@@ -104,7 +105,7 @@ get_contact_matrix <- function(year, sym = 0, save = 1, fileName = NA)
 
   if(save)
   {
-    write.csv(mixing, paste(fileName, ".csv", sep = ''))
+    utils::write.csv(mixing, paste(fileName, ".csv", sep = ''))
     return(1)
   }
 
@@ -112,19 +113,17 @@ get_contact_matrix <- function(year, sym = 0, save = 1, fileName = NA)
 }
 ############################################################################
 #' From model output, find the time range that matches to the observed
-#' data set. Do this by assuming a "peak" month, default is 7 (July)
+#' data set in terms of complete calendar years. Do this by assuming a
+#' "peak" month, default is 7 (July)
 #'
 #' @param counts list of modelled detected infections in aggregated age groups,
-#'               in same form as observational data
+#'               in same age groupings as observational data
 #' @param month month 1 - 12, Default is 7 (July)
-#' @param obs table of monthly hospitalisation data for 4 age groups, at this
-#'            stage assuming complete calendar years
+#' @param nYears number of complete calendar years
 #' @return list(index_start, index_end, phase)
 #'
-findIndexRange <- function(counts, month = 7, obs)
+findIndexRange <- function(counts, month = 7, nYears)
 {
-  nYears <- nrow(obs)/12
-
   aggDetInc <- apply(counts, 1, sum)
   peaks <- pracma::findpeaks(aggDetInc)
 
@@ -335,7 +334,7 @@ create_likelihood_base <- function(parTab, data, fixedPar, PRIOR_FUNC,...){
 #' @return function
 findAverageAge <- function(modOut, ageYears, startT, endT, risk = 1){
 
-  if(risk)nStates <- 16 #HAVEN"T CODED FOR BASE MODEL
+  if(risk)nStates <- 16 #HAVEN'T CODED FOR BASE MODEL
 
   modOut_mat <- modOut$deSolve[startT:endT,,]
 
