@@ -25,4 +25,5 @@ This file contains functions to produce a range of different plots.
 If you wish to use any part of this code, please reference
 
 Giannini, F., Hogan, A.B., Sarna, M. et al. Modelling respiratory syncytial virus age-specific risk of hospitalisation in term and preterm infants. BMC Infect Dis 24, 510 (2024). https://doi.org/10.1186/s12879-024-09400-2
+
 (https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-024-09400-2)
