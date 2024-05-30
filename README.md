@@ -1,7 +1,7 @@
 # rsvmod
 A mathematical compartmental transmission model for RSV
 
-We developed a dynamic compartmental model of Respiratory Syncytial Virus (RSV) fitted to individually-linked population-based laboratory, perinatal and hospitalisation data for 2000-2012 from metropolitan Western Australia (WA), stratified by age and prior exposure. We account for the differential risk of RSV-hospitalisation in full-term and preterm infants (defined as <37 weeks gestation). We formulated a function relating age, RSV exposure history, and preterm status to the risk of RSV-hospitalisation given infection. Further details of this work can be found xx.  The wrapper file, **main.r** provides examples of how to run the model and produce some of the key plots.
+We developed a dynamic compartmental model of Respiratory Syncytial Virus (RSV) fitted to individually-linked population-based laboratory, perinatal and hospitalisation data for 2000-2012 from metropolitan Western Australia (WA), stratified by age and prior exposure. We account for the differential risk of RSV-hospitalisation in full-term and preterm infants (defined as <37 weeks gestation). We formulated a function relating age, RSV exposure history, and preterm status to the risk of RSV-hospitalisation given infection. Further details of this work can be found here https://doi.org/10.1186/s12879-024-09400-2.  The wrapper file, **main.r** provides examples of how to run the model and produce some of the key plots.
 
 A basic summary of the R code files follows. The functions are described in further detail in the comments above the relevant code.
 
@@ -24,4 +24,5 @@ This file contains functions to produce a range of different plots.
 
 If you wish to use any part of this code, please reference
 
-xx
+Giannini, F., Hogan, A.B., Sarna, M. et al. Modelling respiratory syncytial virus age-specific risk of hospitalisation in term and preterm infants. BMC Infect Dis 24, 510 (2024). https://doi.org/10.1186/s12879-024-09400-2
+
